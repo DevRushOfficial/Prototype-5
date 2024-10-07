@@ -18,17 +18,27 @@ public class Target : MonoBehaviour
         transform.position = RandomSpawnPosition();
     }
 
-    Vector3 RandomForce()
+    void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
+
+    private Vector3 RandomForce()
     {
         return Vector3.up * Random.Range(_minUpwardForce, _maxUpwardForce);
     }
 
-    float RandomTorque()
+    private float RandomTorque()
     {
         return Random.Range(-_randomTorque, _randomTorque);
     }
 
-    Vector3 RandomSpawnPosition()
+    private Vector3 RandomSpawnPosition()
     {
         return new Vector3(Random.Range(-_XRange, _XRange), _YPosition);
     }
