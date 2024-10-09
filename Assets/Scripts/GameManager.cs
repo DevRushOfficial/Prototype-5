@@ -6,8 +6,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
-    private float _spawnRate = 1.0f;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
+    private float _spawnRate = 1.0f;
     private int _score;
 
 
@@ -32,5 +33,10 @@ public class GameManager : MonoBehaviour
     {
         _score += scoreToAdd;
         scoreText.text = "Score: " + _score;
+    }
+
+    public void GameOver()
+    {
+        gameOverText.gameObject.SetActive(true);
     }
 }
