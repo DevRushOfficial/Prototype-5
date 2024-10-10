@@ -5,7 +5,7 @@ public class Target : MonoBehaviour
     [SerializeField]
     private ParticleSystem _explosionParticle;
     private Rigidbody _targetRb;
-    private GameManager gameManager;
+    private GameManager _gameManager;
     private float _minUpwardForce = 12;
     private float _maxUpwardForce = 16;
     private float _randomTorque = 10;
@@ -16,7 +16,7 @@ public class Target : MonoBehaviour
 
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _targetRb = GetComponent<Rigidbody>();
     }
 
@@ -31,7 +31,7 @@ public class Target : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate(_explosionParticle, transform.position, _explosionParticle.transform.rotation);
-        gameManager.UpdateScore(pointValue);
+        _gameManager.UpdateScore(pointValue);
     }
 
     void OnTriggerEnter(Collider other)
@@ -39,7 +39,7 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
         if (!other.gameObject.CompareTag("Bad"))
         {
-            gameManager.GameOver();
+            _gameManager.GameOver();
         }
     }
 
