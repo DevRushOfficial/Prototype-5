@@ -1583,7 +1583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370203460}
   m_Layer: 5
-  m_Name: Levels
+  m_Name: Levels Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2368,15 +2368,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c6ba140aab37641bbe4d481771cef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
+  _targets:
   - {fileID: 7985856238945561506, guid: edf9bc09b4583ee439da8cc30533039c, type: 3}
   - {fileID: 4181714199341487825, guid: e289fba173521dd49be1b81c2f87d827, type: 3}
   - {fileID: 6158295747948620689, guid: 0e7b9c329a92c6a4ebe8dd402139d573, type: 3}
   - {fileID: 7736174131881039232, guid: b09da22fa1dc3f841940875373b542e3, type: 3}
-  scoreText: {fileID: 1835077348}
-  gameOverText: {fileID: 627096593}
-  restartButton: {fileID: 597857811}
-  menuObject: {fileID: 773031236}
+  _scoreText: {fileID: 1835077348}
+  _gameOverText: {fileID: 627096593}
+  _restartButton: {fileID: 597857811}
+  _gameMenu: {fileID: 773031236}
   isGameActive: 0
 --- !u!4 &1923393744
 Transform:
